@@ -1,9 +1,29 @@
 import React from "react";
+import { motion } from "framer-motion";
 import profileImage from "../assets/images/profile.jpg";
 import myResume from "../assets/images/resume.pdf";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
+  const headingAnimation = {
+    hidden: { y: 40, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const paragraphAnimation = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.25, ease: "easeOut" },
+    },
+  };
+
+  const buttonHover = {
+    whileHover: { y: -2, scale: 1.02 },
+    whileTap: { y: 0, scale: 0.98 },
+  };
+
   return (
     <div
       id="home"
@@ -22,34 +42,50 @@ const Hero = () => {
           </span>
 
           {/* Premium Gradient Name */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight bg-linear-to-r from-white via-indigo-200 to-cyan-300 text-transparent bg-clip-text">
+          <motion.h1
+            variants={headingAnimation}
+            initial="hidden"
+            animate="visible"
+            className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight bg-linear-to-r from-white via-indigo-200 to-cyan-300 text-transparent bg-clip-text"
+          >
             Abdul Rahim
-          </h1>
+          </motion.h1>
 
           {/* Clear Subtitle */}
-          <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-400 mb-8 max-w-xl leading-relaxed">
+          <motion.p
+            variants={paragraphAnimation}
+            initial="hidden"
+            animate="visible"
+            className="text-lg sm:text-xl md:text-2xl font-medium text-gray-400 mb-8 max-w-xl leading-relaxed"
+          >
             Frontend Developer specialized in crafting high-performance,
             visually stunning <span className="text-white">React</span> &{" "}
             <span className="text-cyan-400">Tailwind CSS</span> web
             applications.
-          </p>
+          </motion.p>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-            <a
+            <motion.a
               href="#contact"
               className="w-full sm:w-auto text-center bg-linear-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 px-8 py-3.5 rounded-full text-white font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.25)] text-sm uppercase tracking-wider"
+              whileHover={buttonHover.whileHover}
+              whileTap={buttonHover.whileTap}
+              transition={{ duration: 0.25 }}
             >
               Hire Me
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href={myResume}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto text-center border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 px-8 py-3.5 rounded-full font-semibold text-sm uppercase tracking-wider text-gray-200"
+              whileHover={buttonHover.whileHover}
+              whileTap={buttonHover.whileTap}
+              transition={{ duration: 0.25 }}
             >
               View Resume
-            </a>
+            </motion.a>
           </div>
 
           {/* Social Links with Premium Hover */}
@@ -78,7 +114,11 @@ const Hero = () => {
 
         {/* Right Content (Premium Profile Image) */}
         <div className="flex-1 flex justify-center md:justify-end">
-          <div className="relative group">
+          <motion.div
+            className="relative group"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+          >
             {/* Outer Rotating/Glowing Gradient Background Layer */}
             <div className="absolute -inset-1 rounded-full bg-linear-to-r from-violet-600 to-cyan-400 opacity-40 blur-xl group-hover:opacity-70 group-hover:blur-2xl transition duration-500"></div>
 
@@ -90,7 +130,7 @@ const Hero = () => {
                 className="w-52 h-52 sm:w-68 sm:h-68 md:w-80 md:h-80 rounded-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
