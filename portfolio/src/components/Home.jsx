@@ -1,45 +1,25 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import React from "react";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import About from "./About";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import Services from "./Services";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-
-      <main className="pt-20">
-
-        {/* Home Section */}
-        <section id="home">
-          <Hero />
-        </section>
-
-        {/* About Section */}
-        <section id="about">
-          <About />
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills">
-          <Skills />
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects">
-          <Projects />
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact">
-          <Contact />
-        </section>
-
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Services />
+        <Contact />
       </main>
-
       <Footer />
     </>
   );

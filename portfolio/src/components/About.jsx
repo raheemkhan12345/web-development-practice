@@ -1,265 +1,264 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
-  FiCloudSnow,
-  FiDollarSign,
-  FiMessageSquare,
   FiBookOpen,
   FiCode,
   FiCpu,
-  FiCalendar,
-  FiLayers,
+  FiCheckCircle,
+  FiAward,
+  FiZap,
+  FiLayout,
+  FiServer,
+  FiArrowUpRight,
 } from "react-icons/fi";
+import TiltCard from "./common/TiltCard";
+import myResume from "../assets/images/resume.pdf";
 
 const About = () => {
-  // Major Production-Ready Systems
-  const coreProjects = [
+  const pillars = [
     {
-      title: "Crown Elite - Wedding Hall Management System",
+      title: "Modular Clean Architecture",
       description:
-        "An enterprise-grade management platform featuring real-time booking schedules, visual calendar modules, customized invoice generation, and full administrative control over event pipelines.",
-      tech: ["React", "React Router", "Context API"],
-      icon: (
-        <FiCalendar className="text-amber-600 transition-colors duration-300 group-hover:text-white text-3xl" />
-      ),
-      themeColor: "group-hover:bg-amber-600 border-amber-100 bg-amber-50/50",
-      type: "Enterprise System",
+        "Structuring decoupled, maintainable React codebases with reusable component patterns, centralized state management, and clear separation of concerns.",
+      icon: <FiCode className="text-cyan-400 text-2xl" />,
+      borderGlow: "group-hover:border-cyan-500/50",
+      accent: "from-cyan-500/20 to-blue-500/10",
     },
     {
-      title: "School Learning Management System (LMS)",
+      title: "Performance & Responsive First",
       description:
-        "A comprehensive institutional portal engineered to stream student performance analytics, distribute assignments, track academic fee ledgers, and manage classroom structures efficiently.",
-      tech: ["React", "React Router", "Context API"],
-      icon: (
-        <FiLayers className="text-indigo-600 transition-colors duration-300 group-hover:text-white text-3xl" />
-      ),
-      themeColor: "group-hover:bg-indigo-600 border-indigo-100 bg-indigo-50/50",
-      type: "Management Portal",
+        "Building pixel-perfect interfaces that load swiftly across all device tiers with optimized asset delivery, GPU animations, and zero layout shift.",
+      icon: <FiZap className="text-amber-400 text-2xl" />,
+      borderGlow: "group-hover:border-amber-500/50",
+      accent: "from-amber-500/20 to-orange-500/10",
+    },
+    {
+      title: "Modern UI/UX & Motion Design",
+      description:
+        "Transforming wireframes into engaging experiences with fluid micro-interactions, 3D visual accents, and accessible design principles.",
+      icon: <FiLayout className="text-indigo-400 text-2xl" />,
+      borderGlow: "group-hover:border-indigo-500/50",
+      accent: "from-indigo-500/20 to-purple-500/10",
+    },
+    {
+      title: "API & Data Integration",
+      description:
+        "Connecting frontend interfaces smoothly with REST APIs, WebSocket streams, and backend services with robust error handling and loading feedback.",
+      icon: <FiServer className="text-emerald-400 text-2xl" />,
+      borderGlow: "group-hover:border-emerald-500/50",
+      accent: "from-emerald-500/20 to-teal-500/10",
     },
   ];
 
-  // Utility Micro-Apps
-  const miniProjects = [
+  const milestones = [
     {
-      title: "Weather App",
+      year: "Graduation",
+      title: "BS Software Engineering",
+      institution: "Sarhad University of Science and Information Technology, Peshawar",
       description:
-        "A dynamic weather application tracking real-time global atmospheric conditions with seamless REST API integration.",
-      tech: ["React", "REST API", "Tailwind CSS"],
-      icon: (
-        <FiCloudSnow className="text-blue-600 transition-colors duration-300 group-hover:text-white text-2xl" />
-      ),
-      themeColor: "group-hover:bg-blue-600",
+        "Comprehensive training in software design patterns, data structures, algorithms, database systems, and modern web application development.",
+      badge: "Academic Degree",
     },
     {
-      title: "Currency Converter",
+      year: "Focus Area",
+      title: "Frontend Engineering & Modern Web",
+      institution: "Specialized Project Track",
       description:
-        "A precise financial tool providing instant currency exchange computations using live-updating transactional feeds.",
-      tech: ["React", "Live Exchange API"],
-      icon: (
-        <FiDollarSign className="text-violet-600 transition-colors duration-300 group-hover:text-white text-2xl" />
-      ),
-      themeColor: "group-hover:bg-violet-600",
+        "Engineered full-scale production applications including the Crown Elite Wedding Hall System, Institutional LMS, and multiple React utility micro-apps.",
+      badge: "Engineering Focus",
     },
-    {
-      title: "School Chatbot",
-      description:
-        "An automated educational assistant engineered with Dialogflow to intelligently resolve inquiries regarding student metrics.",
-      tech: ["Dialogflow", "NLP Integration"],
-      icon: (
-        <FiMessageSquare className="text-emerald-600 transition-colors duration-300 group-hover:text-white text-2xl" />
-      ),
-      themeColor: "group-hover:bg-emerald-600",
-    },
+  ];
+
+  const highlights = [
+    { number: "100%", label: "Responsive Layouts", detail: "Flawless on Mobile & Desktop" },
+    { number: "6+", label: "Featured Projects", detail: "Enterprise & Utility Apps" },
+    { number: "Modern", label: "React 19 & Tailwind", detail: "Cutting-edge Frontend Stack" },
+    { number: "Clean", label: "Architecture", detail: "Maintainable & Modular Code" },
   ];
 
   return (
-    <div
+    <section
       id="about"
-      className="w-full bg-[#f8fafc] text-slate-800 py-28 border-t border-slate-200/60 relative overflow-hidden"
+      className="w-full bg-[#080d1a] text-slate-100 py-24 sm:py-32 relative overflow-hidden border-t border-slate-900"
     >
-      {/* Premium Ambient Light Background Glows */}
-      <div className="absolute top-0 right-0 w-150 h-150 bg-linear-to-b from-indigo-100/40 via-blue-50/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-125 h-125 bg-linear-to-t from-slate-200/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      {/* Ambient Cyber Gradients */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-cyan-600/10 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
-        <div className="mb-16 text-center md:text-left">
-          <span className="text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-50 px-3 py-1 rounded-md border border-indigo-100">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-4 py-1.5 rounded-full inline-block backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
             Professional Profile
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mt-3 mb-4">
-            About Me
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white font-['Space_Grotesk'] mb-4">
+            Engineering with <span className="text-gradient-cyan">Precision & Passion</span>
           </h2>
-          <div className="w-12 h-1 bg-indigo-600 rounded-full md:mx-0 mx-auto"></div>
+          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+            Bridging the gap between creative visual design and robust digital architecture.
+          </p>
         </div>
 
-        {/* Executive Split-Layout Info Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-28">
-          {/* Left Side: Professional Bio */}
+        {/* Executive Split Section: Bio & Key Metrics */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+          
+          {/* Left Column: Biography & Background (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <p className="text-slate-600 text-lg leading-relaxed">
-              Hello! I am{" "}
-              <span className="text-slate-900 font-semibold">Abdul Rahim</span>,
-              a dedicated Software Engineer graduated from the{" "}
-              <span className="text-slate-900 font-medium border-b-2 border-indigo-100 pb-0.5">
-                Sarhad University of Science and Information Technology,
-                Peshawar
+            <h3 className="text-2xl sm:text-3xl font-bold text-white font-['Space_Grotesk']">
+              Building scalable digital experiences that users love.
+            </h3>
+            
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              I am <span className="text-white font-semibold">Abdul Rahim</span>, a Software Engineer graduated with a BS in Software Engineering from the{" "}
+              <span className="text-cyan-300 font-medium">
+                Sarhad University of Science and Information Technology, Peshawar
               </span>
-              . I specialize in architecting modern, high-performance web user
-              interfaces.
+              .
             </p>
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-              My engineering approach centers on writing clean, modular code and
-              solving complex responsiveness puzzles. I bridge the gap between
-              creative design concepts and robust digital architecture, striving
-              to build tools that provide exceptional user experiences.
+
+            <p className="text-slate-400 text-base leading-relaxed">
+              My engineering philosophy revolves around writing clean, decoupled, and easily maintainable systems. I specialize in architecting modern web user interfaces that balance high-speed execution with tasteful visual sophistication and interactive polish.
+            </p>
+
+            {/* Core Values / Checklist */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+              {[
+                "Component-Driven Architecture",
+                "Intuitive UI/UX Micro-Interactions",
+                "Modern Tailwind & Responsive Systems",
+                "Clean Code & Scalable State Management",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-300">
+                  <FiCheckCircle className="text-cyan-400 shrink-0 text-base" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-4">
+              <a
+                href={myResume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 group"
+              >
+                <span>Read Full Resume & Credentials</span>
+                <FiArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Dynamic Metrics Cards (5 Cols) */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+            {highlights.map((item, index) => (
+              <TiltCard
+                key={index}
+                maxTilt={10}
+                className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl shadow-lg hover:border-cyan-500/30 transition-all duration-300"
+              >
+                <div className="flex flex-col justify-between h-full">
+                  <div className="text-2xl sm:text-3xl font-black text-gradient-cyan font-mono mb-2">
+                    {item.number}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white mb-1">
+                      {item.label}
+                    </h4>
+                    <p className="text-xs text-slate-400">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              </TiltCard>
+            ))}
+          </div>
+
+        </div>
+
+        {/* ================= CORE ENGINEERING PILLARS ================= */}
+        <div className="mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white font-['Space_Grotesk'] mb-3">
+              Core Engineering Pillars
+            </h3>
+            <p className="text-sm text-slate-400">
+              The foundational principles guiding every application I build.
             </p>
           </div>
 
-          {/* Right Side: Quick Highlights Cards */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            <div className="p-5 bg-white border border-slate-200/60 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex items-start gap-4">
-              <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg">
-                <FiBookOpen size={20} />
-              </div>
-              <div>
-                <h5 className="font-bold text-slate-900 text-sm">Education</h5>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  BS Software Engineering
-                </p>
-              </div>
-            </div>
-            <div className="p-5 bg-white border border-slate-200/60 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex items-start gap-4">
-              <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-lg">
-                <FiCode size={20} />
-              </div>
-              <div>
-                <h5 className="font-bold text-slate-900 text-sm">Tech Stack</h5>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  React & Tailwind CSS
-                </p>
-              </div>
-            </div>
-            <div className="p-5 bg-white border border-slate-200/60 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex items-start gap-4 sm:col-span-2">
-              <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg">
-                <FiCpu size={20} />
-              </div>
-              <div>
-                <h5 className="font-bold text-slate-900 text-sm">Philosophy</h5>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  Writing scalable, decoupled, and easily maintainable clean
-                  systems.
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pillars.map((pillar, index) => (
+              <TiltCard
+                key={index}
+                maxTilt={12}
+                className={`group p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-md hover:bg-slate-900/70 transition-all duration-300 ${pillar.borderGlow}`}
+              >
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-slate-700 transition-all duration-300">
+                      {pillar.icon}
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </div>
+              </TiltCard>
+            ))}
           </div>
         </div>
 
-        {/* ================= CATEGORY 1: CORE FEATURED SYSTEMS ================= */}
-        <div className="mb-20">
-          <div className="mb-10 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
-              Featured Core Systems
+        {/* ================= EDUCATION & MILESTONES TIMELINE ================= */}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-950/50 border border-indigo-500/30 px-3 py-1 rounded-full inline-block mb-3">
+              Background
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white font-['Space_Grotesk']">
+              Education & Academic Track
             </h3>
-            <p className="text-sm text-slate-500 mt-1">
-              Full-scale applications architecture built with complex state
-              management and clean layout constraints.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {coreProjects.map((project, index) => (
+          <div className="space-y-6">
+            {milestones.map((m, idx) => (
               <div
-                key={index}
-                className="group bg-white border border-slate-200/80 rounded-2xl p-8 hover:border-slate-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-[0_10px_35px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)]"
+                key={idx}
+                className="group relative p-6 sm:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/40 backdrop-blur-md transition-all duration-300"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div
-                      className={`p-4 rounded-xl border transition-all duration-300 ${project.themeColor}`}
-                    >
-                      {project.icon}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                      <FiBookOpen />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-md border border-indigo-100">
-                      {project.type}
-                    </span>
+                    <div>
+                      <h4 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
+                        {m.title}
+                      </h4>
+                      <p className="text-xs sm:text-sm font-medium text-slate-400">
+                        {m.institution}
+                      </p>
+                    </div>
                   </div>
 
-                  <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
-                    {project.title}
-                  </h4>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                    {project.description}
-                  </p>
+                  <span className="self-start sm:self-center px-3 py-1 rounded-full text-[10px] font-mono font-semibold uppercase tracking-wider bg-indigo-950/80 text-indigo-300 border border-indigo-500/30">
+                    {m.badge}
+                  </span>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 pt-5 border-t border-slate-100">
-                  {project.tech.map((t, idx) => (
-                    <span
-                      key={idx}
-                      className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100/50 px-3 py-1 rounded-md"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mt-4 pl-0 sm:pl-14">
+                  {m.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ================= CATEGORY 2: HIGHLIGHTED MICRO-APPS ================= */}
-        <div>
-          <div className="text-center md:text-left mb-10">
-            <h3 className="text-2xl font-bold tracking-tight text-slate-900">
-              Highlighted Micro-Apps
-            </h3>
-            <p className="text-sm text-slate-500 mt-1">
-              Core utility instances engineered during my development track
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {miniProjects.map((project, index) => (
-              <div
-                key={index}
-                className="group bg-white border border-slate-200/70 rounded-2xl p-6 hover:border-slate-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between shadow-[0_4px_25px_rgba(0,0,0,0.015)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div
-                      className={`p-3 bg-slate-50 rounded-xl border border-slate-100 transition-all duration-300 ${project.themeColor}`}
-                    >
-                      {project.icon}
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 bg-slate-100/70 px-2.5 py-1 rounded-md border border-slate-200/30">
-                      Micro Project
-                    </span>
-                  </div>
-
-                  <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
-                    {project.title}
-                  </h4>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100">
-                  {project.tech.map((t, idx) => (
-                    <span
-                      key={idx}
-                      className="text-[11px] font-medium text-slate-600 bg-slate-100 border border-slate-200/60 px-2.5 py-0.5 rounded-md"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
