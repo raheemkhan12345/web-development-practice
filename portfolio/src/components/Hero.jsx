@@ -53,7 +53,7 @@ const Hero = () => {
             animate="visible"
           >
             {/* Status Pill Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
+            {/* <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.15)]">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -63,7 +63,7 @@ const Hero = () => {
                 <span className="text-slate-600">•</span>
                 <span className="text-slate-400">Frontend Developer</span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Main Greeting & Name */}
             <motion.div variants={itemVariants}>
